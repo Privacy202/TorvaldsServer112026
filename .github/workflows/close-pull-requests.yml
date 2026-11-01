@@ -1,0 +1,18 @@
+# GitHub is a read-only copy of this repository: point pull requests to the patch address and close them.
+name: Close pull requests
+on:
+  pull_request_target:
+    types: [opened, reopened]
+permissions:
+  pull-requests: write
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reply and close
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr close "$PR" --repo "$REPO" --comment "Thanks for this. GitHub is a read-only copy of this repository and doesn't take pull requests. Please send your change as a plain-text patch by email to patches@mytangle.ca, with a Signed-off-by line on every commit. CONTRIBUTING.md explains how."

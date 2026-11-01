@@ -1,0 +1,14 @@
+List of maintainers
+
+Each entry covers a program (a branch) and says who looks after it and where patches go.
+
+	M: Maintainer, who reviews and applies patches
+	L: Where patches are sent
+	T: Where the official tree is published
+	S: Status: Maintained, Odd Fixes or Orphan
+
+ALL PROGRAMS
+M:	TorvaldsServer maintainers <patches@mytangle.ca>
+L:	patches@mytangle.ca
+T:	git https://github.com/Privacy202/TorvaldsServer112026.git
+S:	Maintained
